@@ -1,0 +1,2 @@
+include ':app', ':kotlinnextinputs'
+rootProject.name='KotlinNextInputs'
