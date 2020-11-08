@@ -70,19 +70,28 @@ class ValidateAnkoActivity : AppCompatActivity() {
         messageDisplay =
             if (rb_show_snackbar.isChecked) AndroidSnackbarMessageDisplay() else AndroidToastMessageDisplay()
 
+        //子项目至少选择一项
         add(rg_1.nextInput, StaticScheme.Required().msg("请在rb_1,rb_2,rb_3中选择一个"))
+
+        //子项目至少选择一项
         add(
             gl_1.nextInput(checkableId = R.id.cb_1),
             StaticScheme.Required().msg("请至少选择一个cb_1")
         )
+
+        //至少输入一项
         add(
             et_1.findOnceSatisfy(et_1.nextInput, et_2.nextInput),
             StaticScheme.Required().msg("文本框至少输入一项")
         )
+
+        //当前有值时前项必须输入
         add(
             et_2.nextInput,
             SchemeExtend.RequiredAndPreviousRequired(et_1.lazyLoader)
         )
+
+        //正则表达式检查
         add(
             et_1.nextInput,
             SchemeExtend.Regex(SchemeExtend.PASSWORD_8DL_REGEX).msg("请输入8位英文+数字")

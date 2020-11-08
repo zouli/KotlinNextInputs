@@ -29,6 +29,9 @@ fun ViewGroup.nextInput(childMinCount: Int = -1, checkableId: Int = -1) =
         else -> null
     }
 
+/**
+ * 至少输入一项
+ */
 fun View.findOnceSatisfy(vararg inputs: Input) =
     inputs.joinToString("") { it.value.trim() }
         .let { WidgetProvidersExtend.view(this, it) }
