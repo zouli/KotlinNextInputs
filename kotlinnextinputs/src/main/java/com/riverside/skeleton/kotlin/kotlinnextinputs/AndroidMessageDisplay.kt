@@ -47,7 +47,7 @@ class AndroidSnackbarMessageDisplay : MessageDisplay {
             if (this.context !is Activity && TextView::class.java.isAssignableFrom(this::class.java)) {
                 (this as TextView).requestFocus()
             }
-            message?.snackbar(this.context)
+            message?.snackbar(this.context)?.show()
         }
     }
 }
