@@ -21,10 +21,10 @@ android {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.0.2'
-    implementation 'androidx.core:core-ktx:1.0.2'
-    implementation 'com.google.android.material:material:1.0.0'
+    compileOnly "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    compileOnly 'androidx.appcompat:appcompat:1.0.2'
+    compileOnly 'androidx.core:core-ktx:1.0.2'
+    compileOnly 'com.google.android.material:material:1.0.0'
 
     //UI验证框架
     implementation 'com.github.yoojia:next-inputs-android:1.7.2'
